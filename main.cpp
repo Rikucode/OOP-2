@@ -22,8 +22,8 @@ int main() {
         y = std::min(5.0,y);
         y = std::max(-5.0,y);
         //добавим к выстрелу случайное изменение координат от -5 до 5
-        x = x + ((-maxCoord) + static_cast <float> (rand()) /( static_cast <float> (((1 << 15) - 1)/(maxCoord-(-maxCoord)))));
-        y = y + ((-maxCoord) + static_cast <float> (rand()) /( static_cast <float> (((1 << 15) - 1)/(maxCoord-(-maxCoord)))));
+        x = x + ((-maxCoord) + static_cast <float> (rand()) /( static_cast <float> (((1 << 31) - 1)/(maxCoord-(-maxCoord)))));
+        y = y + ((-maxCoord) + static_cast <float> (rand()) /( static_cast <float> (((1 << 31) - 1)/(maxCoord-(-maxCoord)))));
         //не сохраняем выстрелы, считаем расстояние от попадания до центра и даем очки сразу же;
         rad = sqrt(pow(x,2)+pow(y,2));
         score += std::max(0 ,5 - static_cast<int>(floor(rad)));
